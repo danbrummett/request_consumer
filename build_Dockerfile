@@ -1,0 +1,9 @@
+FROM golang:alpine
+
+WORKDIR /app
+
+ENV SRC_DIR=/go/src/github.com/danbrummett/request_consumer/
+ADD . $SRC_DIR
+RUN apk update && apk add git; cd $SRC_DIR; go get; go build -o request_consumer; cp request_consumer /app/
+
+CMD "echo BUILD COMPLETE"

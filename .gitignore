@@ -5,6 +5,7 @@
 *.so
 *.dylib
 
+request_consumer
 # Test binary, built with `go test -c`
 *.test
 
